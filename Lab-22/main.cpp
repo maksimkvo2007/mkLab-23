@@ -94,6 +94,19 @@ public:
         }
         delete temp; 
     }
+    
+    void pop_back() {
+        if (!tail) return; 
+        
+        Node* temp = tail;
+        tail = tail->prev;
+        
+        if (tail) {
+            tail->next = nullptr;
+        } else {
+            head = nullptr; 
+        }
+        delete temp; 
     }
 
     void delete_val(int value) {
