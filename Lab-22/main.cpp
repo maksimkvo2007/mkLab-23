@@ -124,6 +124,19 @@ public:
             temp = temp->next;
             currentPos++;
         }
+        if (!temp) {
+            cout << "Position " << pos << " is out of bounds.\n";
+            return;
+        }
+
+        if (!temp->next) { 
+            pop_back();
+            return;
+        }
+
+        temp->prev->next = temp->next;
+        temp->next->prev = temp->prev;
+        delete temp;
 
     }
 
