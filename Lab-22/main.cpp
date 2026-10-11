@@ -109,6 +109,24 @@ public:
         delete temp; 
     }
 
+    void delete_pos(int pos) {
+        if (!head || pos < 1) return; 
+
+        if (pos == 1) {
+            pop_front();
+            return;
+        }
+
+        Node* temp = head;
+        int currentPos = 1;
+
+        while (temp && currentPos < pos) {
+            temp = temp->next;
+            currentPos++;
+        }
+
+    }
+
     void delete_val(int value) {
         if (!head) return; // Empty list
         
