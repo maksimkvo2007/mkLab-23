@@ -196,28 +196,29 @@ public:
 // Driver program
 int main() {
     DoublyLinkedList list;
+
+    list.push_back(10);
+    list.push_back(20);
+    list.push_back(30);
+    list.push_back(40);
+    list.push_back(50);
     
-    // Seed the random number generator (optional but recommended if using rand)
-    srand(time(0)); 
-    
-    int size = rand() % (MAX_LS - MIN_LS + 1) + MIN_LS;
-    
-    for (int i = 0; i < size; ++i)
-        list.push_back(rand() % (MAX_NR - MIN_NR + 1) + MIN_NR);
-        
-    cout << "List forward: ";
+    cout << "Original list: ";
     list.print();
-    
-    cout << "List backward: ";
-    list.print_reverse();
-    
-    cout << "Deleting list, then trying to print.\n";
-    // Explicitly calling the destructor is generally bad practice in C++, 
-    // but preserving it here as it was in the original demo code.
-    list.~DoublyLinkedList(); 
-    
-    cout << "List forward: ";
+
+    list.pop_front(); 
+    cout << "After pop_front: ";
     list.print();
-    
-    return 0;
+
+    list.pop_back(); 
+    cout << "After pop_back: ";
+    list.print();
+
+    list.delete_pos(2); 
+    cout << "After delete_pos(2): ";
+    list.print();
+
+    list.delete_val(40); 
+    cout << "After delete_val(40): ";
+    list.print();
 }
