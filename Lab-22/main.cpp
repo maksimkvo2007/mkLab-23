@@ -81,7 +81,12 @@ public:
         temp->next = newNode;
     }
 
-    void delete_node(int value) {
+    void pop_front(){
+        if (!head) return; //checking if list is empty
+        
+    }
+
+    void delete_val(int value) {
         if (!head) return; // Empty list
         
         Node* temp = head;
