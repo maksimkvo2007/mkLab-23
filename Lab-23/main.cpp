@@ -20,6 +20,20 @@ int main_menu() {
     return ch;
 }
 
+void display_trip(const list<Goat>& trip) {
+    if (trip.empty()) {
+        cout << "Trip is empty.\n";
+        return;
+    }
+    int idx = 1;
+    for (auto it = trip.begin(); it != trip.end(); ++it) {
+        cout << "[" << idx++ << "] ";
+        it->print();
+        cout << endl;
+    }
+}
+
+
 int main() {
     srand(time(0));
 
