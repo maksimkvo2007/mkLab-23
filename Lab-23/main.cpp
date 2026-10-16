@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 using namespace std;
+#include "Goat.h"
 
 int main_menu() {
     int ch = 0;
@@ -17,4 +18,14 @@ int main_menu() {
         cin >> ch;
     }
     return ch;
+}
+
+int main() {
+    srand(time(0));
+
+    string names[] = {"Vida", "Nola", "Todd", "Faye", "Lena", "Owen", "Kyle", "Vern"}; // Preset arrays for random selection
+    string colors[] = {"Red", "Gold", "Green", "Silver", "Teal", "Magenta", "Olive", "Blue"};
+    int name_sz = 8;
+    int color_sz = 8;
+
 }
