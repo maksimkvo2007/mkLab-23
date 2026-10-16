@@ -36,5 +36,19 @@ public:
         age = a;
         color = c;
     }
+void setName(string n) { name = n; }
+    string getName() const { return name; }
 
-}
+    void setAge(int a) { age = a; }
+    int getAge() const { return age; }
+
+    void setColor(string c) { color = c; }
+    string getColor() const { return color; }
+
+    // Print helper
+    void print() const {
+        cout << name << " (" << age << ", " << color << ")";
+    }
+};
+
+#endif
