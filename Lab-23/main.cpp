@@ -6,6 +6,8 @@
 using namespace std;
 #include "Goat.h"
 
+const int MAX_AGE = 20;
+
 int main_menu() {
     int ch = 0;
     while (ch < 1 || ch > 4) {
@@ -26,7 +28,7 @@ void display_trip(const list<Goat>& trip) {
         return;
     }
     int idx = 1;
-    for (auto it = trip.begin(); it != trip.end(); ++it) {
+    for (list<Goat>::const_iterator it = trip.begin(); it != trip.end(); ++it) {
         cout << "[" << idx++ << "] ";
         it->print();
         cout << endl;
@@ -63,7 +65,7 @@ void delete_goat(list<Goat>& trip) {
         return;
     }
 
-    auto it = trip.begin();
+    list<Goat>::iterator it = trip.begin();
     for (int i = 1; i < pick; ++i) {
         ++it;
     }
