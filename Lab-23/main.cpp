@@ -45,6 +45,21 @@ void add_goat(list<Goat>& trip, string names[], int ns, string colors[], int cs)
     cout << endl;
 }
 
+void delete_goat(list<Goat>& trip) {
+    if (trip.empty()) {
+        cout << "No goats to delete.\n";
+        return;
+    }
+
+    cout << "Select a goat to delete:\n";
+    display_trip(trip);
+
+    int pick = 0;
+    cout << "Choice --> ";
+    cin >> pick;
+
+}
+
 
 int main() {
     srand(time(0));
