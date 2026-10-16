@@ -72,6 +72,8 @@ void delete_goat(list<Goat>& trip) {
 }
 
 
+
+
 int main() {
     srand(time(0));
 
@@ -79,5 +81,23 @@ int main() {
     string colors[] = {"Red", "Gold", "Green", "Silver", "Teal", "Magenta", "Olive", "Blue"};
     int name_sz = 8;
     int color_sz = 8;
+
+    list<Goat> trip;
+    int choice = 0;
+
+    while (choice != 4) {
+        choice = main_menu();
+
+        if (choice == 1) {
+            add_goat(trip, names, name_sz, colors, color_sz);
+        } else if (choice == 2) {
+            delete_goat(trip);
+        } else if (choice == 3) {
+            display_trip(trip);
+        }
+    }
+
+    cout << "Goodbye!\n";
+    return 0;
 
 }
