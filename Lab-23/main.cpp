@@ -58,6 +58,17 @@ void delete_goat(list<Goat>& trip) {
     cout << "Choice --> ";
     cin >> pick;
 
+    if (pick < 1 || pick > (int)trip.size()) {
+        cout << "Invalid selection.\n";
+        return;
+    }
+
+    auto it = trip.begin();
+    for (int i = 1; i < pick; ++i) {
+        ++it;
+    }
+    trip.erase(it);
+    cout << "Goat deleted.\n";
 }
 
 
